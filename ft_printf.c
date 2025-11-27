@@ -36,29 +36,29 @@ int ft_printf(const char *format, ...)
 				ft_putnbr(a);
 				count += ft_numlen(a);
 			}
-			else if (format[i] == 'c')
+			if (format[i] == 'c')
 			{
 				ft_putchar((char)va_arg(args, int));
 				count += 1;
 			}
-			else if (format[i] == 's')
+			if (format[i] == 's')
 			{
 				str = va_arg(args, char *);
 				ft_putstr(str);
 				count += ft_strlen(str);
 			}
-			else if (format[i] == '%')
+			if (format[i] == '%')
 			{
 				ft_putchar('%');
 				count++;
 			}
-			else if (format[i] == 'x' || format[i] == 'X')
+			if (format[i] == 'x' || format[i] == 'X')
 			{
 				a = va_arg(args, int);
 				ft_putnbr_hex(a, format[i]);
 				count += ft_numlen_hex(a);
 			}
-			else if (format[i] == 'p')
+			if (format[i] == 'p')
 			{
 
 			}
