@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numlen.c                                        :+:      :+:    :+:   */
+/*   s_specifier.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 15:25:17 by ahamouda          #+#    #+#             */
-/*   Updated: 2025/11/28 16:06:22 by ahamouda         ###   ########.fr       */
+/*   Created: 2025/11/28 12:36:49 by ahamouda          #+#    #+#             */
+/*   Updated: 2025/11/28 16:53:45 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_numlen(long n)
+void	s_specifier(int *count, char *str)
 {
-	int		len;
-
-	len = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
+		ft_putstr(str);
+		*count += ft_strlen(str);
 }

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numlen.c                                        :+:      :+:    :+:   */
+/*   dicx_specifiers.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 15:25:17 by ahamouda          #+#    #+#             */
-/*   Updated: 2025/11/28 16:06:22 by ahamouda         ###   ########.fr       */
+/*   Created: 2025/11/28 12:36:42 by ahamouda          #+#    #+#             */
+/*   Updated: 2025/11/28 19:08:03 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_numlen(long n)
+void	dicx_specifiers(int *count, char c, int a)
 {
-	int		len;
-
-	len = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-		len++;
-	while (n != 0)
+	if (c == 'd' || c == 'i')
 	{
-		n /= 10;
-		len++;
+		ft_putnbr((long)a);
+		*count += ft_numlen((long)a);
 	}
-	return (len);
+	else if (c == 'c')
+	{
+		ft_putchar((char)a);
+		(*count)++;
+	}
+	else if (c == 'x' || c == 'X')
+	{
+		ft_putnbr_hex((unsigned int)a, c);
+		*count += ft_numlen_hex((unsigned int)a);
+	}
 }

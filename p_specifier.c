@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numlen.c                                        :+:      :+:    :+:   */
+/*   p_specifier.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 15:25:17 by ahamouda          #+#    #+#             */
-/*   Updated: 2025/11/28 16:06:22 by ahamouda         ###   ########.fr       */
+/*   Created: 2025/11/28 16:58:53 by ahamouda          #+#    #+#             */
+/*   Updated: 2025/11/28 19:23:11 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_numlen(long n)
+void	p_specifier(int *count, void *p)
 {
-	int		len;
-
-	len = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
+	write(1, "0x", 2);
+	ft_putnbr_hex((unsigned long)p, 'x');
+	*count += ft_numlen_hex((unsigned long)p) + 2;
 }

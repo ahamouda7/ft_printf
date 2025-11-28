@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahamouda <ahamouda.student@42.fr>          +#+  +:+       +#+        */
+/*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 23:13:02 by ahamouda          #+#    #+#             */
-/*   Updated: 2025/11/27 23:13:02 by ahamouda         ###   ########.fr       */
+/*   Updated: 2025/11/28 17:52:50 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ void	ft_putstr(char *str)
 {
 	int	i;
 
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return ;
+	}
 	i = 0;
 	while (str[i])
 	{

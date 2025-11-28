@@ -3,105 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahamouda <ahamouda.student@42.fr>          +#+  +:+       +#+        */
+/*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 23:12:48 by ahamouda          #+#    #+#             */
-/*   Updated: 2025/11/27 23:12:48 by ahamouda         ###   ########.fr       */
+/*   Created: 2025/11/28 15:21:37 by ahamouda          #+#    #+#             */
+/*   Updated: 2025/11/28 19:13:24 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int ft_printf(const char *format, ...)
+void    which_specifier(int *count, char c, va_list args)
 {
-	int		i;
-	int 	a;
-	char	*str;
-	int		count;
-
-	va_list args;
-	va_start(args, format);
-
-	i = 0;
-	count = 0;
-	while (format[i])
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			if (format[i] == 'd' || format[i] == 'i' || format[i] == 'u')
-			{
-				a = va_arg(args, int);
-				ft_putnbr(a);
-				count += ft_numlen(a);
-			}
-			else if (format[i] == 'c')
-			{
-				ft_putchar((char)va_arg(args, int));
-				count++;
-			}
-			else if (format[i] == 's')
-			{
-				str = va_arg(args, char *);
-				ft_putstr(str);
-				count += ft_strlen(str);
-			}
-			else if (format[i] == '%')
-			{
-				ft_putchar('%');
-				count++;
-			}
-			else if (format[i] == 'x' || format[i] == 'X')
-			{
-				a = va_arg(args, int);
-				ft_putnbr_hex(a, format[i]);
-				count += ft_numlen_hex(a);
-			}
-			else if (format[i] == 'p')
-			{
-
-			}
-			else
-			{
-				ft_putchar(format[i]);
-				count++;
-			}
-		}
-		else
-		{
-			ft_putchar(format[i]);
-			count++;
-		}
-		i++;
-	}
-	va_end(args);
-	// printf("%d\n", count);
-	return (count);
+    if (c == 'd' || c == 'i' || c == 'c' || c == 'x' || c == 'X')
+        dicx_specifiers(count, c, va_arg(args, int));
+    else if (c == 'u')
+        u_specifier(count, va_arg(args, unsigned int));
+    else if (c == 's')
+        s_specifier(count, va_arg(args, char *));
+    else if (c == 'p')
+        p_specifier(count, va_arg(args, void *));
+    else
+        other_specifiers(count, c);
 }
 
-int main()
+int	ft_printf(const char *format, ...)
 {
-	char	*str = "Anass";
+	int		count;
+	va_list	args;
 
-	// ft_printf("%d\n", 29);
-	// printf("%d\n", 29);
-
-	// ft_printf("%i\n", -29);
-	// printf("%i\n", -29);
-
-	// ft_printf("%u\n", 29);
-	// printf("%u\n", 29);
-
-	// ft_printf("%x\n", 255);
-	// printf("%x\n", 255);
-
-	// ft_printf("%X\n", str);
-	// printf("%X\n", str);
-
-	ft_printf("%p\n", str);
-	printf("%p\n", str);
-
-	// ft_printf("%y\n", str);
-	// printf("%y\n", str);
+	count = 0;
+	va_start(args, format);
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			format++;
+            which_specifier(&count, *format, args);
+		}
+		else
+			other_specifiers(&count, *format);
+		format++;
+	}
+	return (va_end(args), count);
 }

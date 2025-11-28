@@ -3,22 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahamouda <ahamouda.student@42.fr>          +#+  +:+       +#+        */
+/*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 23:12:59 by ahamouda          #+#    #+#             */
-/*   Updated: 2025/11/27 23:12:59 by ahamouda         ###   ########.fr       */
+/*   Updated: 2025/11/28 18:41:13 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_putnbr(int nb)
+void	ft_putnbr(long nb)
 {
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return;
-	}
 	if (nb < 0)
 	{
 		ft_putchar('-');

@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numlen.c                                        :+:      :+:    :+:   */
+/*   other_specifiers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 15:25:17 by ahamouda          #+#    #+#             */
-/*   Updated: 2025/11/28 16:06:22 by ahamouda         ###   ########.fr       */
+/*   Created: 2025/11/28 12:36:46 by ahamouda          #+#    #+#             */
+/*   Updated: 2025/11/28 12:44:59 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_numlen(long n)
+void	other_specifiers(int *count, char c)
 {
-	int		len;
-
-	len = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
+	ft_putchar(c);
+	(*count)++;
 }
