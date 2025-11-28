@@ -12,8 +12,8 @@
 
 #include "ft_printf.h"
 
-void    u_specifier(int *count, unsigned int a)
+void	u_specifier(int *count, unsigned int a)
 {
-    ft_putnbr((long)a);
+	ft_putnbr((long)a);
 	*count += ft_numlen((long)a);
 }

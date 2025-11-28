@@ -29,6 +29,6 @@ void	dicx_specifiers(int *count, char c, int a);
 void	u_specifier(int *count, unsigned int a);
 void	s_specifier(int *count, char *str);
 void	other_specifiers(int *count, char c);
-void    p_specifier(int *count, void *p);
+void	p_specifier(int *count, void *p);
 
 #endif

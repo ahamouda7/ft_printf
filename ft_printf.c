@@ -12,18 +12,18 @@
 
 #include "ft_printf.h"
 
-void    which_specifier(int *count, char c, va_list args)
+void	which_specifier(int *count, char c, va_list args)
 {
-    if (c == 'd' || c == 'i' || c == 'c' || c == 'x' || c == 'X')
-        dicx_specifiers(count, c, va_arg(args, int));
-    else if (c == 'u')
-        u_specifier(count, va_arg(args, unsigned int));
-    else if (c == 's')
-        s_specifier(count, va_arg(args, char *));
-    else if (c == 'p')
-        p_specifier(count, va_arg(args, void *));
-    else
-        other_specifiers(count, c);
+	if (c == 'd' || c == 'i' || c == 'c' || c == 'x' || c == 'X')
+		dicx_specifiers(count, c, va_arg(args, int));
+	else if (c == 'u')
+		u_specifier(count, va_arg(args, unsigned int));
+	else if (c == 's')
+		s_specifier(count, va_arg(args, char *));
+	else if (c == 'p')
+		p_specifier(count, va_arg(args, void *));
+	else
+		other_specifiers(count, c);
 }
 
 int	ft_printf(const char *format, ...)
@@ -38,7 +38,7 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-            which_specifier(&count, *format, args);
+			which_specifier(&count, *format, args);
 		}
 		else
 			other_specifiers(&count, *format);

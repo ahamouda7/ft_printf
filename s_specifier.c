@@ -14,6 +14,6 @@
 
 void	s_specifier(int *count, char *str)
 {
-		ft_putstr(str);
-		*count += ft_strlen(str);
+	ft_putstr(str);
+	*count += ft_strlen(str);
 }
