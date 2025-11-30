@@ -14,12 +14,14 @@
 
 void	which_specifier(int *count, char c, va_list args)
 {
-	if (c == 'd' || c == 'i' || c == 'c' || c == 'x' || c == 'X')
+	if (c == 'd' || c == 'i' || c == 'c')
 		dicx_specifiers(count, c, va_arg(args, int));
 	else if (c == 'u')
 		u_specifier(count, va_arg(args, unsigned int));
 	else if (c == 's')
 		s_specifier(count, va_arg(args, char *));
+	else if (c == 'x' || c == 'X')
+		hex_specifier(count, c, va_arg(args, unsigned int));
 	else if (c == 'p')
 		p_specifier(count, va_arg(args, void *));
 	else

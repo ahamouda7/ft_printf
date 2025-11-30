@@ -16,16 +16,18 @@ int main()
 	// printf("%c\n", 'A');
 	
 	// ft_printf("%s\n", NULL); // correct 100%
-	// printf("%s\n", NULL);
-
-	// ft_printf("%x\n", 4294967295); // correct 100%
-	// printf("%x\n", 4294967295);
+	// printf("%s", NULL);
+	
+	// ft_printf(" %x \n", 16); // correct 100%
+	// printf("[%d bytes]\n", ft_printf(" %x ", -10));
+	// printf(" %x ", -10);
 
 	// ft_printf("%X\n", -4294967295); // correct 100%
 	// printf("%X\n", -4294967295);
 
-	ft_printf("%p\n", "Anass"); // correct 100%
-	printf("%p\n", "Anass");
+	// ft_printf("%p\n", 0); // correct 100%
+	printf("[%d bytes]", ft_printf("2. %p %p ", 0, 0));
+	// printf("1. %p %p [21 bytes]", 0, 0);
 
 	// ft_printf("%y\n", "Anass"); // correct 100%
 	// printf("%y\n", "Anass");

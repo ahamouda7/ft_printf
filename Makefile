@@ -16,8 +16,9 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_printf.c ft_putchar.c ft_putnbr.c ft_numlen.c ft_putstr.c \
-       ft_strlen.c ft_putnbr_hex.c ft_numlen_hex.c dicx_specifiers.c \
-	   u_specifier.c s_specifier.c p_specifier.c other_specifiers.c
+       ft_strlen.c ft_putnbr_hex.c ft_numlen_hex.c dic_specifiers.c \
+	   u_specifier.c s_specifier.c p_specifier.c other_specifiers.c \
+	   hex_specifier.c
 
 OBJS = $(SRCS:.c=.o)
 

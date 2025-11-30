@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   p_specifier.c                                      :+:      :+:    :+:   */
+/*   hex_specifier.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ahamouda <ahamouda.student@42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 16:58:53 by ahamouda          #+#    #+#             */
-/*   Updated: 2025/11/28 19:23:11 by ahamouda         ###   ########.fr       */
+/*   Created: 2025/11/30 17:18:33 by ahamouda          #+#    #+#             */
+/*   Updated: 2025/11/30 17:18:33 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	p_specifier(int *count, void *p)
+void	hex_specifier(int *count, char c, unsigned int a)
 {
-	if (p)
-	{
-		write(1, "0x", 2);
-		*count += 2;
-	}
-	ft_putnbr_hex((unsigned long)p, 'x');
-	*count += ft_numlen_hex((unsigned long)p);
+	ft_putnbr_hex((unsigned int)a, c);
+	*count += ft_numlen_hex((unsigned int)a);
 }

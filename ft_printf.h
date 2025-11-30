@@ -30,5 +30,6 @@ void	u_specifier(int *count, unsigned int a);
 void	s_specifier(int *count, char *str);
 void	other_specifiers(int *count, char c);
 void	p_specifier(int *count, void *p);
+void	hex_specifier(int *count, char c, unsigned int a);
 
 #endif

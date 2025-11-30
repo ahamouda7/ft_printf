@@ -19,6 +19,11 @@ void	ft_putnbr_hex(unsigned long nbr, char x)
 
 	hex = "0123456789abcdef";
 	up_hex = "0123456789ABCDEF";
+	if (nbr == 0)
+	{
+		write(1, "00000000", 8);
+		return ;
+	}
 	if (nbr >= 16)
 		ft_putnbr_hex(nbr / 16, x);
 	if (x == 'x')

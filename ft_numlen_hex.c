@@ -17,12 +17,14 @@ int	ft_numlen_hex(unsigned long n)
 	int	len;
 
 	len = 0;
-	if (n < 16)
-		return (1);
+	if (n == 0)
+		return (8);
 	while (n >= 16)
 	{
 		n /= 16;
 		len++;
 	}
+	if (n < 16)
+		len++;
 	return (len);
 }

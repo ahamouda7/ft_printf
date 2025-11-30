@@ -24,9 +24,4 @@ void	dicx_specifiers(int *count, char c, int a)
 		ft_putchar((char)a);
 		(*count)++;
 	}
-	else if (c == 'x' || c == 'X')
-	{
-		ft_putnbr_hex((unsigned int)a, c);
-		*count += ft_numlen_hex((unsigned int)a);
-	}
 }
