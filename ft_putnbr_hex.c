@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 23:13:40 by ahamouda          #+#    #+#             */
-/*   Updated: 2025/11/28 19:17:04 by ahamouda         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:55:17 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ void	ft_putnbr_hex(unsigned long nbr, char x)
 
 	hex = "0123456789abcdef";
 	up_hex = "0123456789ABCDEF";
-	if (nbr == 0)
-	{
-		write(1, "00000000", 8);
-		return ;
-	}
 	if (nbr >= 16)
 		ft_putnbr_hex(nbr / 16, x);
 	if (x == 'x')

@@ -26,8 +26,8 @@ int main()
 	// printf("%X\n", -4294967295);
 
 	// ft_printf("%p\n", 0); // correct 100%
-	printf("[%d bytes]", ft_printf("2. %p %p ", 0, 0));
-	// printf("1. %p %p [21 bytes]", 0, 0);
+	printf("[%d bytes]", ft_printf(" %p %p ", 0, 0));
+	// printf("[%d bytes]", printf(" %p %p ", 0, 0));
 
 	// ft_printf("%y\n", "Anass"); // correct 100%
 	// printf("%y\n", "Anass");

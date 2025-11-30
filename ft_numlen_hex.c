@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 23:49:07 by ahamouda          #+#    #+#             */
-/*   Updated: 2025/11/28 19:18:24 by ahamouda         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:55:23 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	ft_numlen_hex(unsigned long n)
 	int	len;
 
 	len = 0;
-	if (n == 0)
-		return (8);
 	while (n >= 16)
 	{
 		n /= 16;

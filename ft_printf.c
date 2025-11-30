@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 15:21:37 by ahamouda          #+#    #+#             */
-/*   Updated: 2025/11/28 19:13:24 by ahamouda         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:52:15 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	ft_printf(const char *format, ...)
 	int		count;
 	va_list	args;
 
+	if (write(1, "", 0) == -1)
+		return (-1);
 	count = 0;
 	va_start(args, format);
 	while (*format)
