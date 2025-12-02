@@ -17,10 +17,7 @@ void	ft_putstr(char *str)
 	int	i;
 
 	if (!str)
-	{
-		write(1, "(null)", 6);
-		return ;
-	}
+		str = "(null)";
 	i = 0;
 	while (str[i])
 	{

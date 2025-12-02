@@ -15,8 +15,8 @@ int main()
 	// ft_printf("[%d bytes]", ft_printf("%c\n", 'A'));
 	// printf("[%d bytes]", printf("%c\n", 'A'));
 	
-	// ft_printf("[%d bytes]", ft_printf("%s\n", NULL));
-	// ft_printf("[%d bytes]", ft_printf("%s\n", NULL));
+	ft_printf("[%d bytes]\n", ft_printf("%s", NULL));
+	printf("[%d bytes]", printf("%s", NULL));
 
 	// ft_printf("[%d bytes]", ft_printf("%x", -10));
 	// printf("[%d bytes]", printf("%x", -10));
@@ -24,8 +24,8 @@ int main()
 	// ft_printf("[%d bytes]", ft_printf("%X", -4294967295));
 	// printf("[%d bytes]", printf("%X", -4294967295));
 
-	ft_printf("[%d bytes]\n", ft_printf("%p", NULL));
-	printf("[%d bytes]\n", printf("%p", NULL));
+	// ft_printf("[%d bytes]\n", ft_printf("%p", NULL));
+	// printf("[%d bytes]\n", printf("%p", NULL));
 
 	// ft_printf("[%d bytes]", ft_printf("%y\n", "Anass"));
 	// printf("[%d bytes]", printf("%y\n", "Anass"));
