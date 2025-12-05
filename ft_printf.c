@@ -33,8 +33,6 @@ int	ft_printf(const char *format, ...)
 	int		count;
 	va_list	args;
 
-	if (write(1, "", 0) == -1)
-		return (-1);
 	count = 0;
 	va_start(args, format);
 	while (*format)
